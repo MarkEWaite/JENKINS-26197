@@ -4,6 +4,7 @@
 
   <tstamp>
     <format property="date-time" pattern="MM/dd/yyyy hh:mm:ss aa"/>
+    <format property="branch-name" pattern="MM/dd/yyyy-hh:mm:ss-aa"/>
   </tstamp>
 
   <macrodef name="git">
@@ -21,9 +22,16 @@
 
   <target name="version" description="Commits all changes to version git">
     <property name="commit-message" value="Committing latest changes at ${date-time}" />
-    <!-- <input message="Commit message" addproperty="commit-message" /> -->
 
     <echo message="Commiting all changes with message ${commit-message}" />
+    <git command="checkout">
+      <args>
+        <arg value="-b" />
+        <arg value="${branch-name}" />
+        <arg value="origin/master" />
+      </args>
+    </git>
+    <echo file="${branch-name}" message="This file is on a branch named ${branch-name}"/>
     <git command="add">
       <args>
         <arg value="." />
