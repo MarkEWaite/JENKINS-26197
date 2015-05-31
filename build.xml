@@ -2,6 +2,10 @@
 <project name="JENKINS-26197" default="version" basedir=".">
   <!-- Adapted from https://gist.github.com/davejlong/874521 -->
 
+  <tstamp>
+    <format property="date-time" pattern="MM/dd/yyyy hh:mm:ss aa"/>
+  </tstamp>
+
   <macrodef name="git">
     <attribute name="command" />
     <attribute name="dir" default="" />
@@ -16,7 +20,7 @@
   </macrodef>
 
   <target name="version" description="Commits all changes to version git">
-    <property name="commit-message" value="Committing latest changes" />
+    <property name="commit-message" value="Committing latest changes at ${date-time}" />
     <!-- <input message="Commit message" addproperty="commit-message" /> -->
 
     <echo message="Commiting all changes with message ${commit-message}" />
