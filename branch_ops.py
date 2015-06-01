@@ -9,6 +9,7 @@ import time
 
 def checkout_master_branch():
     subprocess.check_call(["git", "checkout", "-f", "master"])
+    subprocess.check_call(["git", "clean", "-xffd"])
 
 #----------------------------------------------------------------------------
 
