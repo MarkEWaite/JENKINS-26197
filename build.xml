@@ -23,9 +23,9 @@
   </macrodef>
 
   <target name="version" description="Commits to git branch and pushes the branch">
-    <property name="commit-message" value="Committing latest changes at ${date-time}" />
+    <property name="commit-message" value="changes at ${date-time}" />
 
-    <echo message="Commiting with message ${commit-message}" />
+    <echo message="Commited ${commit-message}" />
     <git command="checkout">
       <args>
         <arg value="-b" />
