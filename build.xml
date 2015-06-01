@@ -39,7 +39,9 @@
     </git>
     <git command="commit">
       <args>
-        <arg value="-am ${commit-message}" />
+        <arg value="-a" />
+        <arg value="-m" />
+        <arg value="${commit-message}" />
       </args>
     </git>
     <git command="push" />
