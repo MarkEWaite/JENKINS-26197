@@ -35,12 +35,17 @@ def create_and_push_a_branch():
     import string
     suffix = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for i in range(2))
     branch_name = "branch-" + time.strftime("%Y-%m-%d-%H-%M-%S") + "-" + suffix
-    print "Branch", branch_name
+    subprocess.check_call(["git", "checkout", "-b", branch_name, "origin/master"])
+    with open(branch_name, "w") as branch_file:
+        branch_file.write("Created on branch " + branch_name)
+    subprocess.check_call(["git", "add", branch_name])
+    subprocess.check_call(["git", "commit", "-m", "Added " + branch_name + " file"])
+    subprocess.check_call(["git", "push", "origin", "--set-upstream" + branch_name])
 
 #----------------------------------------------------------------------------
 
 def branch_ops():
-    # checkout_master_branch()
+    checkout_master_branch()
     # remove_a_branch()
     create_and_push_a_branch()
 
