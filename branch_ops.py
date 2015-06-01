@@ -49,7 +49,7 @@ def create_and_push_a_branch():
 def branch_ops():
     checkout_master_branch()
     branch_name = list_a_branch()
-    remove_a_branch(branch_name)
+    # remove_a_branch(branch_name)
     # while branch_name:
     #     remove_a_branch(branch_name)
     #     branch_name = list_a_branch()
