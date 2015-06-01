@@ -7,7 +7,8 @@
     <format property="branch-time" pattern="MM-dd-yyyy-hh-mm-ss-aa"/>
   </tstamp>
 
-  <property name="branch-name" value="branch-${branch-time}"/>
+  <property name="branch-name-prefix" value="branch"/>
+  <property name="branch-name" value="${branch-name-prefix}-${branch-time}"/>
 
   <macrodef name="git">
     <attribute name="command" />
@@ -21,6 +22,15 @@
       </exec>
     </sequential>
   </macrodef>
+
+  <target name="remove-a-non-master-branch">
+    <exec executable="git">
+      <arg value="ls-remote" />
+      <arg value="--heads" />
+      <arg value="origin" />
+      <arg value="${branch-name-prefix}*" />
+    </exec>
+  </target>
 
   <target name="version" description="Commits to git branch and pushes the branch">
     <property name="commit-message" value="changes at ${date-time}" />
