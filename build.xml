@@ -2,6 +2,8 @@
 <project name="JENKINS-26197" default="version" basedir=".">
   <!-- Adapted from https://gist.github.com/davejlong/874521 -->
 
+  <property name="branch-name-prefix" value="branch"/>
+
   <tstamp>
     <format property="date-time" pattern="MM/dd/yyyy hh:mm:ss aa"/>
     <format property="branch-name" pattern="branch-MM-dd-yyyy-hh-mm-ss-aa"/>
