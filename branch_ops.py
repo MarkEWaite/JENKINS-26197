@@ -1,6 +1,9 @@
 #! /usr/bin/python
 
+import random
+import string
 import subprocess
+import time
 
 #----------------------------------------------------------------------------
 
@@ -30,9 +33,6 @@ def remove_a_branch():
 #----------------------------------------------------------------------------
 
 def create_and_push_a_branch():
-    import time
-    import random
-    import string
     suffix = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for i in range(2))
     branch_name = "branch-" + time.strftime("%Y-%m-%d-%H-%M-%S") + "-" + suffix
     subprocess.check_call(["git", "checkout", "-b", branch_name, "origin/master"])
