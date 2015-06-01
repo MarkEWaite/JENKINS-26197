@@ -4,7 +4,7 @@
 
   <tstamp>
     <format property="date-time" pattern="MM/dd/yyyy hh:mm:ss aa"/>
-    <format property="branch-name" pattern="MM/dd/yyyy-hh:mm:ss-aa"/>
+    <format property="branch-name" pattern="MM-dd-yyyy-hh-mm-ss-aa"/>
   </tstamp>
 
   <macrodef name="git">
