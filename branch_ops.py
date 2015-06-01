@@ -34,7 +34,7 @@ def create_and_push_a_branch():
     import random
     import string
     suffix = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for i in range(2))
-    branch_name = "branch-" + time.strftime("%Y%m%d-%H%M%S") + "-" + suffix
+    branch_name = "branch-" + time.strftime("%Y-%m-%d-%H-%M-%S") + "-" + suffix
     print "Branch", branch_name
 
 #----------------------------------------------------------------------------
