@@ -40,7 +40,7 @@ def create_and_push_a_branch():
         branch_file.write("Created on branch " + branch_name)
     subprocess.check_call(["git", "add", branch_name])
     subprocess.check_call(["git", "commit", "-m", "Added " + branch_name + " file"])
-    subprocess.check_call(["git", "push", "origin", "--set-upstream" + branch_name])
+    subprocess.check_call(["git", "push", "origin", "--set-upstream", branch_name])
 
 #----------------------------------------------------------------------------
 
