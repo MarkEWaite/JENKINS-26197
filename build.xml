@@ -20,7 +20,7 @@
     </sequential>
   </macrodef>
 
-  <target name="version" description="Commits all changes to version git">
+  <target name="version" description="Commits to git branch and pushes the branch">
     <property name="commit-message" value="Committing latest changes at ${date-time}" />
 
     <echo message="Commiting all changes with message ${commit-message}" />
