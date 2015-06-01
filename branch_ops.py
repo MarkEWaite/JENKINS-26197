@@ -30,7 +30,8 @@ def remove_a_branch():
 #----------------------------------------------------------------------------
 
 def create_and_push_a_branch():
-    pass
+    import time
+    branch_name = "branch-" + time.strftime("%Y%m%d-%H%M%S")
 
 #----------------------------------------------------------------------------
 
