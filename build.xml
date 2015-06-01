@@ -44,6 +44,12 @@
         <arg value="${commit-message}" />
       </args>
     </git>
-    <git command="push" />
+    <git command="push">
+      <args>
+        <arg value="origin" />
+        <arg value="--set-upstream" />
+        <arg value="${branch-name}" />
+      </args>
+    </git>
   </target>
 </project>
