@@ -49,6 +49,7 @@ def branch_ops():
     checkout_master_branch()
     # remove_a_branch()
     create_and_push_a_branch()
+    checkout_master_branch()
 
 #----------------------------------------------------------------------------
 
