@@ -14,7 +14,7 @@ def checkout_master_branch():
 
 #----------------------------------------------------------------------------
 
-def list_a_branch():
+def list_a_remote_branch():
     "List one existing remote branch name that starts with 'branch', return None otherwise"
     branch_ref = subprocess.check_output(["git", "ls-remote", "--heads", "origin", "branch*"]).split()
     prefix = "refs/heads/"
@@ -25,11 +25,11 @@ def list_a_branch():
 
 #----------------------------------------------------------------------------
 
-def remove_a_branch(branch_name):
+def remove_a_remote_branch(branch_name):
     "Remove one remote branch"
-    branch_name = list_a_branch()
-    subprocess.check_call(["git", "branch", "-D", branch_name])
+    branch_name = list_a_remote_branch()
     subprocess.check_call(["git", "push", "origin", ":" + branch_name])
+    subprocess.call(["git", "branch", "-D", branch_name])
 
 #----------------------------------------------------------------------------
 
@@ -48,11 +48,11 @@ def create_and_push_a_branch():
 
 def branch_ops():
     checkout_master_branch()
-    branch_name = list_a_branch()
-    remove_a_branch(branch_name)
+    branch_name = list_a_remote_branch()
+    remove_a_remote_branch(branch_name)
     # while branch_name:
-    #     remove_a_branch(branch_name)
-    #     branch_name = list_a_branch()
+    #     remove_a_remote_branch(branch_name)
+    #     branch_name = list_a_remote_branch()
     create_and_push_a_branch()
     checkout_master_branch()
 
