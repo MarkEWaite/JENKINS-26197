@@ -15,3 +15,6 @@ This repository includes two directories, one named "real" and the
 other named "symbolic".  Entries in the "symbolic" directory either
 point to a file or directory in the "real" directory, or they point to
 a non-existent file.
+
+The test job modifies the symbolic/file content, then uses the text-finder
+plugin to confirm the real/file content was also changed.
