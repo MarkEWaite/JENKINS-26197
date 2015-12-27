@@ -6,7 +6,7 @@ never stop building new copies of itself.
 
 The 2.3.5 plugin does not have that problem (at least in my testing).
 
-[JENKINS-30371[(https://issues.jenkins-ci.org/browse/JENKINS-30371)
+[JENKINS-30371](https://issues.jenkins-ci.org/browse/JENKINS-30371)
 reports that JGit was unable to create a symbolic link even on systems
 (like Linux and FreeBSD) where the file system natively supports
 symbolic links.
