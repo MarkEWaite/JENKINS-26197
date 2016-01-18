@@ -1,20 +1,8 @@
-[JENKINS-26197](https://issues.jenkins-ci.org/browse/JENKINS-26197) - confirm JGit prunes stale remote tracking branches correctly
+[JENKINS-32435](https://issues.jenkins-ci.org/browse/JENKINS-32435) - Env vars unusable in "Branches to Build"
 
-Shows a problem in the development version of git plugin 2.3.6.  If
-the development version polls this repository, the polling job will
-never stop building new copies of itself.
+This change is intentionally on the branch named "jenkins".  That is
+assumed to be the value of the environment variable "LOGNAME" in many
+Jenkins installations (default on Debian and Ubuntu and Red Hat).
 
-The 2.3.5 plugin does not have that problem (at least in my testing).
-
-[JENKINS-30371[(https://issues.jenkins-ci.org/browse/JENKINS-30371)
-reports that JGit was unable to create a symbolic link even on systems
-(like Linux and FreeBSD) where the file system natively supports
-symbolic links.
-
-This repository includes two directories, one named "real" and the
-other named "symbolic".  Entries in the "symbolic" directory either
-point to a file or directory in the "real" directory, or they point to
-a non-existent file.
-
-The test job modifies the symbolic/file content, then uses the text-finder
-plugin to confirm the real/file content was also changed.
+When a test job clones this repo and reads this README.md, it will expect
+to find the string JENKINS-32435 in the file.
