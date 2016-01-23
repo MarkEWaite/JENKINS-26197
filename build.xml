@@ -1,0 +1,17 @@
+<project name="JENKINS-32577" default="info" basedir=".">
+
+  <property environment="env"/>
+
+  <target name="info" description="Report environment information">
+    <buildnumber/>
+    <echo>java version is ${java.version}</echo>
+    <echo>java runtime version is ${java.runtime.version}</echo>
+    <echo>build file is ${ant.file}</echo>
+    <echo>basedir is ${basedir}</echo>
+    <echo>ant java version is ${ant.java.version}</echo>
+    <echo>LANG=${env.LANG}</echo>
+    <echo>LANGUAGE=${env.LANGUAGE}</echo>
+    <echo>LC_ALL=${env.LC_ALL}</echo>
+  </target>
+
+</project>
