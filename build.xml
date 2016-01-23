@@ -1,6 +1,7 @@
 <project name="JENKINS-32577" default="info" basedir=".">
 
   <target name="info" description="Show JENKINS-32577 not a bug">
+    <echo>java version is ${java.version}</echo>
     <buildnumber/>
     <echo>Build number was ${build.number}</echo>
     <exec executable="git">
@@ -13,11 +14,6 @@
       <arg value="Increment build number from ant script - was ${build.number}"/>
       <arg value="build.number"/>
     </exec>
-    <echo>java version is ${java.version}</echo>
-    <echo>java runtime version is ${java.runtime.version}</echo>
-    <echo>build file is ${ant.file}</echo>
-    <echo>basedir is ${basedir}</echo>
-    <echo>ant java version is ${ant.java.version}</echo>
   </target>
 
 </project>
