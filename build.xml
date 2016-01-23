@@ -1,8 +1,6 @@
 <project name="JENKINS-32577" default="info" basedir=".">
 
-  <property environment="env"/>
-
-  <target name="info" description="Report environment information">
+  <target name="info" description="Show JENKINS-32577 not a bug">
     <buildnumber/>
     <echo>Build number was ${build.number}</echo>
     <exec executable="git">
@@ -20,9 +18,6 @@
     <echo>build file is ${ant.file}</echo>
     <echo>basedir is ${basedir}</echo>
     <echo>ant java version is ${ant.java.version}</echo>
-    <echo>LANG=${env.LANG}</echo>
-    <echo>LANGUAGE=${env.LANGUAGE}</echo>
-    <echo>LC_ALL=${env.LC_ALL}</echo>
   </target>
 
 </project>
