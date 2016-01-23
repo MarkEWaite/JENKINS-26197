@@ -11,7 +11,7 @@
     <exec executable="git">
       <arg value="commit"/>
       <arg value="-m"/>
-      <arg value="Increment build number from ant script - ${build.number}"/>
+      <arg value="Increment build number from ant script - was ${build.number}"/>
       <arg value="build.number"/>
     </exec>
     <echo>java version is ${java.version}</echo>
