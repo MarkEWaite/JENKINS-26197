@@ -1,5 +1,6 @@
 <project name="JENKINS-32577" default="info" basedir=".">
 
+  <!-- Increment build number, commit the change -->
   <target name="info" description="Show JENKINS-32577 not a bug">
     <echo>java is ${java.version}</echo>
     <buildnumber/>
