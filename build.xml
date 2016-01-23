@@ -4,6 +4,7 @@
 
   <target name="info" description="Report environment information">
     <buildnumber/>
+    <echo>Build number was ${build.number}</echo>
     <exec executable="git">
       <arg value="add"/>
       <arg value="build.number"/>
