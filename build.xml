@@ -1,7 +1,7 @@
 <project name="JENKINS-32577" default="info" basedir=".">
 
   <target name="info" description="Show JENKINS-32577 not a bug">
-    <echo>java version is ${java.version}</echo>
+    <echo>java is ${java.version}</echo>
     <buildnumber/>
     <echo>Build number was ${build.number}</echo>
     <exec executable="git">
