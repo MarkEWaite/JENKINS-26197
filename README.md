@@ -3,4 +3,6 @@
 The bug report claims that tags don't push through an https authenticated
 URL.
 
-This test uses the JENKINS-32570 branch for verification.
+This test uses the JENKINS-32570 branch for verification.  Verification
+tests run on different Jenkins servers, all monitoring the same GitHub
+repository.
