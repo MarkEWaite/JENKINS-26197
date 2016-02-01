@@ -1,8 +1,8 @@
-[JENKINS-32570](https://issues.jenkins-ci.org/browse/JENKINS-32570) - tags don't push
+[JENKINS-29482](https://issues.jenkins-ci.org/browse/JENKINS-29482) - prune blocks history
 
-The bug report claims that tags don't push through an https authenticated
-URL. I can't duplicate the problem.
+The git plugin change in 2.4.1 to suppress some portion of BuildData
+also broke the history display if stale branch pruning is enabled.
+BuildData is a very challenging part of the plugin to modify without
+causing some unexpected break.
 
-This test uses the JENKINS-32570 branch for verification.  Verification
-tests run on different Jenkins servers, all monitoring the same GitHub
-repository.
+This test uses the JENKINS-29482 branch for verification.
