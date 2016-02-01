@@ -6,3 +6,6 @@ BuildData is a very challenging part of the plugin to modify without
 causing some unexpected break.
 
 This test uses the JENKINS-29482 branch for verification.
+
+Still not clear how to structure the job so that the job itself detects
+when history is missing.
