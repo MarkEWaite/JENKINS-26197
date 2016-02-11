@@ -19,6 +19,7 @@
   </target>
 
   <!-- Fail the build script if this clone is not shallow -->
+  <!-- JGit does not support shallow clone -->
   <target name="fail-if-not-shallow" description="Fail build if clone not shallow">
     <fail>
       <condition>
