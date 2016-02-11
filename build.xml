@@ -18,4 +18,17 @@
     </exec>
   </target>
 
+  <!-- Fail the build script if this clone is not shallow -->
+  <target name="fail-if-not-shallow" description="Fail build if clone not shallow">
+    <fail>
+      <condition>
+	<not>
+	  <resourcecount count="1">
+	    <fileset id="is-this-a-shallow-clone" dir=".git" includes="shallow"/>
+	  </resourcecount>
+	</not>
+      </condition>
+    </fail>
+  </target>
+
 </project>
