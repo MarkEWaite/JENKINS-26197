@@ -32,4 +32,17 @@
     </fail>
   </target>
 
+  <target name="fail-if-build-number-mismatch" description="Fail build if build number does not match">
+    <property prefix="git" file="build.number"/>
+    <property environment="env"/>
+    <echo> arg1="${env.build.number}" arg2="${git.build.number}"</echo>
+    <fail>
+      <condition>
+	<not>
+	  <equals arg1="${env.build.number}" arg2="${git.build.number}"/>
+	</not>
+      </condition>
+    </fail>
+  </target>
+
 </project>
