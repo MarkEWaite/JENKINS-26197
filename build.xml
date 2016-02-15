@@ -1,7 +1,7 @@
-<project name="JENKINS-31108" default="info" basedir=".">
+<project name="JENKINS-24728" default="info" basedir=".">
 
   <!-- Increment build number, commit the change -->
-  <target name="info" description="Show JENKINS-31108 fixed">
+  <target name="info" description="Show JENKINS-24728 fixed">
     <echo>java is ${java.version}</echo>
     <buildnumber/>
     <echo>Build number was ${build.number}</echo>
