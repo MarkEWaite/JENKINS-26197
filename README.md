@@ -9,3 +9,5 @@ This test uses the JENKINS-29482 branch for verification.
 
 Still not clear how to structure the job so that the job itself detects
 when history is missing.
+
+A wget would probably do it in the job runtime.
