@@ -1,4 +1,4 @@
-[JENKINS-29482](https://issues.jenkins-ci.org/browse/JENKINS-29482) - prune blocks history
+## [JENKINS-29482](https://issues.jenkins-ci.org/browse/JENKINS-29482) - prune blocks history
 
 The git plugin change in 2.4.1 to suppress some portion of BuildData
 also broke the history display if stale branch pruning is enabled.
