@@ -33,6 +33,3 @@
   </macrodef>
 
 </project>
-<project name="JENKINS-43052" default="increment" basedir=".">
-
-</project>
