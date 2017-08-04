@@ -1,4 +1,4 @@
 #Build Number for ANT. Do not edit!
-#Thu Aug 03 21:05:52 MDT 2017
-build.number=1105
+#Fri Aug 04 16:06:02 MDT 2017
+build.number=1106
 EXPECTED_BUILD_NUMBER=${build.number}
