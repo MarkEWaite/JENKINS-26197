@@ -1,0 +1,84 @@
+<project name="JENKINS-45447" default="increment" basedir=".">
+
+  <property name="tags.arg" value="--tags"/>
+
+  <target name="increment" description="Increment build number">
+    <git command="pull" />
+    <buildnumber/>
+    <git command="add">
+      <args>
+        <arg value="build.number"/>
+      </args>
+    </git>
+    <git command="commit">
+      <args>
+        <arg value="-m"/>
+        <arg value="[${ant.project.name}] build++, was ${build.number}"/>
+      </args>
+    </git>
+    <!-- Tag predecessor commit with previous build number -->
+    <git command="tag">
+      <args>
+        <arg value="-a"/>
+        <arg value="-m"/>
+        <arg value="Annotated tag for ${ant.project.name} build 1.0.${build.number}"/>
+        <arg value="${ant.project.name}-1.0.${build.number}"/>
+        <arg value="HEAD^"/>
+      </args>
+    </git>
+    <git command="push">
+      <args>
+        <arg value="origin"/>
+      </args>
+    </git>
+    <git command="push">
+      <args>
+        <arg value="origin"/>
+        <arg value="${tags.arg}"/>
+      </args>
+    </git>
+    <git command="push">
+      <args>
+        <arg value="cache"/>
+      </args>
+    </git>
+    <git command="push">
+      <args>
+        <arg value="cache"/>
+        <arg value="${tags.arg}"/>
+      </args>
+    </git>
+    <git command="push">
+      <args>
+        <arg value="bare"/>
+      </args>
+    </git>
+    <git command="push">
+      <args>
+        <arg value="bare"/>
+        <arg value="${tags.arg}"/>
+      </args>
+    </git>
+  </target>
+
+  <!-- Info about this repository -->
+  <target name="info" description="Report info about this repo">
+    <echo>java is ${java.version}</echo>
+    <echo>user dir is ${user.dir}</echo>
+    <!-- JENKINS-45447 reports that rev-parse is called too often. -->
+  </target>
+
+  <!-- From https://gist.github.com/davejlong/874521 -->
+  <macrodef name="git">
+    <attribute name="command" />
+    <attribute name="dir" default="" />
+    <element name="args" optional="true" />
+    <sequential>
+      <exec executable="git" dir="@{dir}">
+        <arg value="@{command}" />
+        <args/>
+      </exec>
+    </sequential>
+  </macrodef>
+
+</project>
