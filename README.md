@@ -18,3 +18,8 @@ a non-existent file.
 
 The test job modifies the symbolic/file content, then uses the text-finder
 plugin to confirm the real/file content was also changed.
+
+[JENKINS-45447](https://issues.jenkins-ci.org/browse/JENKINS-45447)
+and [JENKINS-47169](https://issues.jenkins-ci.org/browse/JENKINS-47169)
+report that rev-parse is called for every tag on every build and every
+poll, even when the tags do not match the branch name specification.
