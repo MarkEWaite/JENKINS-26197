@@ -17,7 +17,6 @@
       </hudson.plugins.git.BranchSpec>
     </branches>
     <gitTool>jgit</gitTool>
-    <submoduleCfg class="list"/>
     <extensions>
       <hudson.plugins.git.extensions.impl.PruneStaleBranch/>
     </extensions>
