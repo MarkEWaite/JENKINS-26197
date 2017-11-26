@@ -40,8 +40,6 @@
     <hudson.plugins.xshell.XShellBuilder plugin="xshell@0.10">
       <commandLine>git branch -a</commandLine>
       <executeFromWorkingDir>false</executeFromWorkingDir>
-      <regexToKill></regexToKill>
-      <timeAllocated></timeAllocated>
     </hudson.plugins.xshell.XShellBuilder>
   </builders>
   <publishers/>
