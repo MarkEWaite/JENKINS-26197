@@ -16,7 +16,6 @@
         <name>**</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
-    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <gitTool>jgit</gitTool>
     <submoduleCfg class="list"/>
     <extensions>
@@ -28,7 +27,6 @@
   <disabled>true</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <jdk>(Default)</jdk>
   <triggers>
     <hudson.triggers.SCMTrigger>
       <spec></spec>
