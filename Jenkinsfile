@@ -16,8 +16,6 @@ node {
     // Need explicit clone of tags for assertion
     checkout([$class: 'GitSCM',
         branches: [[name: branch]],
-        browser: [$class: 'GithubWeb', repoUrl: 'git@github.com:MarkEWaite/JENKINS-26197.git'],
-        doGenerateSubmoduleConfigurations: false,
         extensions: [
             [$class: 'CloneOption', honorRefspec: true, noTags: false],
             [$class: 'LocalBranch', localBranch: branch]],
