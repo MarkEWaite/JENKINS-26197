@@ -44,6 +44,15 @@
     <echo>java is ${java.version}</echo>
     <echo>user dir is ${user.dir}</echo>
     <!-- JENKINS-45447 reports that rev-parse is called too often. -->
+    <!-- Check by reading console log interactively -->
+
+    <!-- JENKINS-64149 asked to clarify user name exclusion rules -->
+    <!-- Check by reading git polling log, should contain string "Found excluded author:" -->
+    <exec executable="curl" failonerror="true">
+      <arg value="--fail" />
+      <arg value="--silent" />
+      <arg value="${env.JOB_URL}/scmPollLog/" />
+    </exec>
   </target>
 
   <!-- From https://gist.github.com/davejlong/874521 -->
