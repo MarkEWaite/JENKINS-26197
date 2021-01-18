@@ -21,8 +21,8 @@
     </extensions>
   </scm>
   <quietPeriod>0</quietPeriod>
-  <canRoam>true</canRoam>
   <disabled>true</disabled>
+  <canRoam>true</canRoam>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
