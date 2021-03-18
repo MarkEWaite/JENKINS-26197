@@ -14,6 +14,7 @@
     <git command="commit">
       <args>
         <arg value="-m"/>
+        <arg value="--author='Mark E Waite &lt;mwaite@cloudbees.com&gt;'"/>
         <arg value="[${ant.project.name}] build++, was ${build.number}"/>
       </args>
     </git>
@@ -21,7 +22,6 @@
     <git command="tag">
       <args>
         <arg value="-a"/>
-        <arg value="--author=Mark-E-Waite<mwaite@cloudbees.com>"/>
         <arg value="-m"/>
         <arg value="Annotated tag for ${ant.project.name} build 1.0.${build.number}"/>
         <arg value="${ant.project.name}-1.0.${build.number}"/>
