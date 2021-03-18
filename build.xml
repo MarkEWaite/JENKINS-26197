@@ -14,7 +14,7 @@
     <git command="commit">
       <args>
         <arg value="-m"/>
-        <arg value="--author='Mark E Waite &lt;mwaite@cloudbees.com&gt;'"/>
+        <arg value="--author=MarkEWaite&lt;mwaite@cloudbees.com&gt;"/>
         <arg value="[${ant.project.name}] build++, was ${build.number}"/>
       </args>
     </git>
