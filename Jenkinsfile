@@ -24,6 +24,7 @@ node('!windows && !cloud') {
     if (status != 0) {
         unstable('**** Build was triggered ****')
         currentBuild.description = "Triggered"
+        print "User cause is ${currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')}"
     }
   }
 }
