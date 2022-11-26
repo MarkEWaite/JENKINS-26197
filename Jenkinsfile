@@ -31,7 +31,6 @@ node('!windows && !cloud') {
         }
         print "User cause is ${currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')}"
         print "SCM trigger cause is ${currentBuild.getBuildCauses('hudson.triggers.SCMTrigger$SCMTriggerCause')}"
-        print "SCM trigger cause is ${currentBuild.getBuildCauses('hudson.triggers.SCMTrigger$SCMTriggerCause')}"
         print "Branch indexing trigger cause is ${currentBuild.getBuildCauses('jenkins.branch.BranchIndexingCause')}"
     }
   }
