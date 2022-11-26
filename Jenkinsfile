@@ -27,6 +27,6 @@ node('!windows && !cloud') {
       manager.addWarningBadge('Automatic build triggered for ' + branch)
       unstable('Built branch ' + branch)
     }
-    echo "Current build changesets are" + currentBuild.changeSets
+    echo "Current build changesets are" + currentBuild.changeSets.items()
   }
 }
