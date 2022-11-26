@@ -27,10 +27,9 @@ node('!windows && !cloud') {
       manager.addWarningBadge('Automatic build triggered for ' + branch)
       unstable('Built branch ' + branch)
     }
-    for (item in currentBuild.changeSets) {
-      echo "Changeset item " + item.getItems()
-      for (file in item.getItems().getAffectedFiles()) {
-        echo "Affected file " + file
+    for (change in currentBuild.changeSets) {
+      for (entry in change.items) {
+        echo("commit ${entry.commitId} by ${entry.author} with message ${entry.msg}")
       }
     }
   }
