@@ -33,7 +33,6 @@
     <!-- Check by reading git multibranch Pipeline polling log, should contain string "Found excluded author:" -->
     <exec executable="curl" failonerror="true">
       <arg value="--fail" />
-      <arg value="--verbose" />
       <arg value="http://mark-pc2.markwaite.net:8080/job/Bugs-Pipeline-Checks/job/JENKINS-26197/indexing/consoleText" />
     </exec>
   </target>
