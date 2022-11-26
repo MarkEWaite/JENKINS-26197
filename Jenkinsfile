@@ -18,20 +18,20 @@ node('!windows && !cloud') {
                              url: 'https://github.com/MarkEWaite/JENKINS-26197']]]
     )
   }
-  stage('Verify') {
-    sh 'ant info'
-    // if (manager.logContains('.*No automatic build triggered for ' + branch + '.*')) {
-    //   manager.addInfoBadge('No automatic build triggered for ' + branch)
-    // }
-    // if (manager.logContains('.*Scheduled build for branch:.*' + branch + '.*')) {
-    //   manager.addWarningBadge('Automatic build triggered for ' + branch)
-    //   unstable('Built branch ' + branch)
-    // }
-    // for (item in currentBuild.changeSets) {
-    //   echo "Changeset item " + item.getItems()
-    //   for (file in item.getItems().getAffectedFiles()) {
-    //     echo "Affected file " + file
-    //   }
-    // }
-  }
+  // stage('Verify') {
+  //   sh 'ant info'
+  //   if (manager.logContains('.*No automatic build triggered for ' + branch + '.*')) {
+  //     manager.addInfoBadge('No automatic build triggered for ' + branch)
+  //   }
+  //   if (manager.logContains('.*Scheduled build for branch:.*' + branch + '.*')) {
+  //     manager.addWarningBadge('Automatic build triggered for ' + branch)
+  //     unstable('Built branch ' + branch)
+  //   }
+  //   for (item in currentBuild.changeSets) {
+  //     echo "Changeset item " + item.getItems()
+  //     for (file in item.getItems().getAffectedFiles()) {
+  //       echo "Affected file " + file
+  //     }
+  //   }
+  // }
 }
