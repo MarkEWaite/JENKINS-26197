@@ -15,4 +15,4 @@ Steps to reproduce:
 Problem was a missing null check in the GitSCMFileSystem.calculate()
 method when rev is not null and env is null.  A little surprising that
 spotbugs did not detect that null pointer condition.  Sad that I
-didn't detect it.
+didn't detect it.  Live and learn.
