@@ -1,18 +1,13 @@
-[JENKINS-42971](https://issues.jenkins-ci.org/browse/JENKINS-42971) - Lightweight checkout does not expand environment variables
+## [JENKINS-70158](https://issues.jenkins.io/browse/JENKINS-70158) - Ignore committer strategy is not honored in git plugin 4.14.0
 
-Pipeline from SCM does not expand parameters or environment variables 
+The "Ignore committer" strategy is not honored in git plugin 4.14.0 when it was honored in git plugin 4.13.0.
 
 Steps to reproduce:
 
-* Create a new Pipeline with a String Parameter  `PIPELINE_BRANCH`
-* In the pipeline definition ; Select "Pipeline Script from SCM"
-* Enter the repository URL: https://github.com/MarkEWaite/JENKINS-26197.git
-* In branch to build, enter the parameter  : `${PIPELINE_BRANCH}` with a default value `ENKINS-42971`
-* Run the job with the default value of the `PIPELINE_BRANCH` parameter
- 
-An error is thrown :
-```
-hudson.plugins.git.GitException: Command "git fetch --tags --progress origin 
-  +refs/heads/${PIPELINE_BRANCH}:refs/remotes/origin/${PIPELINE_BRANCH} --prune" 
-  returned status code 128:
-```
+* Install git plugin 4.13.0
+* Create a new multibranch Pipeline with the repository URL: https://github.com/MarkEWaite/JENKINS-26197.git
+* Commit to a branch in the repository and confirm the branch is detected and built successfully
+* Add the strategy "Ignore committer" strategy to the multibranch Pipeline with your own git email address ignored
+* Commit to the branch again and confirm that the change is detected for the branch but the job is not built (git plugin 4.13.0)
+* Install git plugin 4.14.0
+* Commit to the branch again and confirm that the change is detected for the branch and the job is built (git plugin 4.14.0)
