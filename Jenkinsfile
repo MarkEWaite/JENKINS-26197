@@ -25,11 +25,10 @@ node('!windows && !cloud') {
         else
             echo Scheduled build for branch ${branch} was not run
         fi
-        if ant info | grep -q No.automatic.build.triggered.for.${branch}; then
-            echo No automatic build triggered for branch ${branch}
-        else
-            echo Automatic build was triggered for branch ${branch}
-        fi
     """
+    status = sh returnStatus: true, script: "ant info | grep -q No.automatic.build.triggered.for.${branch}"
+    if (status == 0) {
+        unstable('Build was triggered')
+    }
   }
 }
