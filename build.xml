@@ -34,6 +34,7 @@
     <echo>BUILD_URL is ${env.BUILD_URL}</echo>
     <exec executable="curl" failonerror="true">
       <arg value="--fail" />
+      <arg value="--location" />
       <arg value="${env.BUILD_URL}../../../indexing/consoleText" />
     </exec>
   </target>
