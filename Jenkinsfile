@@ -28,7 +28,7 @@ node('!windows && !cloud') {
       unstable('Built branch ' + branch)
     }
     for (item in currentBuild.changeSets) {
-      echo "Changeset item " + item
+      echo "Changeset item " + item.getItems()
     }
   }
 }
