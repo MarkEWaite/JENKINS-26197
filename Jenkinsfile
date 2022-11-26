@@ -27,10 +27,12 @@ node('!windows && !cloud') {
       manager.addWarningBadge('Automatic build triggered for ' + branch)
       unstable('Built branch ' + branch)
     }
+    /*
     for (change in currentBuild.changeSets) {
       for (entry in change.items) {
         echo("commit ${entry.commitId} by ${entry.author} with message ${entry.msg}")
       }
     }
+    */
   }
 }
