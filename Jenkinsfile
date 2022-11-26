@@ -22,13 +22,12 @@ node('!windows && !cloud') {
     sh "ant info"
     status = sh returnStatus: true, script: "ant info | grep -q No.automatic.build.triggered.for.${branch}"
     if (status != 0) {
-        if (! currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause') ) {
-            unstable('**** Build was triggered ****')
-            currentBuild.description = 'Triggered and not started by a user'
-        }
         if ( currentBuild.getBuildCauses('jenkins.branch.BranchIndexingCause') ) {
             echo '**** Build was triggered  by branch indexing ****'
             currentBuild.description = "Triggered by branch indexing"
+        } else if (! currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause') ) {
+            unstable('**** Build was triggered ****')
+            currentBuild.description = 'Triggered and not started by a user'
         }
         print "User cause is ${currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')}"
         print "SCM trigger cause is ${currentBuild.getBuildCauses('hudson.triggers.SCMTrigger$SCMTriggerCause')}"
