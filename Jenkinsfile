@@ -4,7 +4,7 @@
 properties([[$class: 'BuildDiscarderProperty',
                 strategy: [$class: 'LogRotator', numToKeepStr: '10']]])
 
-def branch=env.PIPELINE_BRANCH
+def branch='JENKINS-70158'
 
 node {
   stage('Checkout') {
