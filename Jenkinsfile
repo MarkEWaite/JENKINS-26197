@@ -19,8 +19,10 @@ node('!windows && !cloud') {
   }
   stage('Verify') {
     sh 'ant info'
-    if (manager.logContains('Scheduled build for branch: JENKINS-70158')) {
-      unstable 'Built branch JENKINS-70158'
+    if (manager.logContains('Scheduled build for branch:' + branch)) {
+      unstable('Built branch ' + branch)
+    } else {
+      error('Oops')
     }
   }
 }
