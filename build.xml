@@ -34,8 +34,7 @@
     <echo>curl --fail --silent ${env.JOB_URL}/scmPollLog/</echo>
     <exec executable="curl" failonerror="true">
       <arg value="--fail" />
-      <arg value="--silent" />
-      <arg value="${env.JOB_URL}/../indexing/console/" />
+      <arg value="${env.JOB_URL}/../../indexing/consoleText" />
     </exec>
   </target>
 
