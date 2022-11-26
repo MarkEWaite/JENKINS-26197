@@ -31,7 +31,7 @@
     <!-- JENKINS-70158 reports that ignore committer strategy is not honored in git plugin 4.14.0. -->
     <!-- Check by reading multibranch Pipeline polling log interactively -->
     <!-- Check by reading git multibranch Pipeline polling log, should contain string "Found excluded author:" -->
-    <echo>BUILD_URL is ${env.BUILD_URL}</echo>
+    <echo>BUILD_URL is ${env.BUILD_URL} and consoleText is ${env.BUILD_URL}../../../indexing/consoleText</echo>
     <exec executable="curl" failonerror="true">
       <arg value="--fail" />
       <arg value="--location" />
