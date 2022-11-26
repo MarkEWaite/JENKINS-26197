@@ -19,6 +19,6 @@ node('!windows && !cloud') {
     )
   }
   stage('Verify') {
-    sh 'ant info'
+    sh "ant info | grep Scheduled.build.for.branch:.${branch}'
   }
 }
