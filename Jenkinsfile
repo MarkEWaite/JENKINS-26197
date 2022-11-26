@@ -19,16 +19,10 @@ node('!windows && !cloud') {
     )
   }
   stage('Verify') {
-    sh """
-        if ant info | grep -q Scheduled.build.for.branch:.${branch}; then
-            echo Scheduled build for branch ${branch} was run
-        else
-            echo Scheduled build for branch ${branch} was not run
-        fi
-    """
+    sh "ant info"
     status = sh returnStatus: true, script: "ant info | grep -q No.automatic.build.triggered.for.${branch}"
-    if (status == 0) {
-        unstable('Build was triggered')
+    if (status != 0) {
+        unstable('**** Build was triggered ****')
     }
   }
 }
