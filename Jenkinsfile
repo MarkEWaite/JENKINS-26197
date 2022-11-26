@@ -6,7 +6,7 @@ properties([[$class: 'BuildDiscarderProperty',
 
 def branch='JENKINS-70158'
 
-node {
+node('!windows') {
   stage('Checkout') {
     checkout([$class: 'GitSCM',
         branches: [[name: branch]],
@@ -17,5 +17,7 @@ node {
         userRemoteConfigs: [[refspec: "+refs/heads/${branch}:refs/remotes/origin/${branch}", url: 'https://github.com/MarkEWaite/JENKINS-26197']]]
     )
   }
-
+  stage('Verify') {
+    sh 'ant info'
+  }
 }
