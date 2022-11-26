@@ -20,11 +20,11 @@ node('!windows && !cloud') {
   }
   stage('Verify') {
     sh """
-    if ant info | grep -q Scheduled.build.for.branch:.${branch}; then
-        echo Scheduled build for branch ${branch} was run
-    else
-        echo Scheduled build for branch ${branch} was not run
-    fi
+build for branch ${branch} was run        if ant info | grep -q Scheduled.build.for.branch:.${branch}; then
+            echo Scheduled build for branch ${branch} was run
+        else
+            echo Scheduled build for branch ${branch} was not run
+        fi
     """
   }
 }
