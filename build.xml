@@ -32,12 +32,12 @@
     <!-- Check by reading multibranch Pipeline polling log interactively -->
     <!-- Check by reading git multibranch Pipeline polling log, should contain string "Found excluded author:" -->
     <echo>Job URL is  ${env.JOB_URL}</echo>
-    <echo>Curl URL is  ${env.JOB_URL}/../../indexing/consoleText</echo>
-    <echo>curl --fail --verbose ${env.JOB_URL}/../../indexing/consoleText</echo>
+    <echo>Curl URL is  ${env.JOB_URL}../../../indexing/consoleText</echo>
+    <echo>curl --fail --verbose ${env.JOB_URL}../../../indexing/consoleText</echo>
     <exec executable="curl" failonerror="true">
       <arg value="--fail" />
       <arg value="--verbose" />
-      <arg value="${env.JOB_URL}/../../indexing/consoleText" />
+      <arg value="${env.JOB_URL}../../../indexing/consoleText" />
     </exec>
   </target>
 
