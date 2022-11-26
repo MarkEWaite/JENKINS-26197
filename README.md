@@ -12,7 +12,7 @@ Steps to reproduce:
 * Install git plugin 4.14.0
 * Commit to the branch again and confirm that the change is detected for the branch and the job is built (git plugin 4.14.0)
 
-Problem was a missing null check in the GitSCMFileSystem.calculate()
-method when rev is not null and env is null.  A little surprising that
-spotbugs did not detect that null pointer condition.  Sad that I
-didn't detect it.  Live and learn.
+Problem was a missing null check in the GitSCMFileSystem.calculate() method when rev is not null and env is null.
+A little surprising that spotbugs did not detect that null pointer condition.
+Sad that I didn't detect it.
+Live and learn.
