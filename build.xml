@@ -12,6 +12,10 @@
       </args>
     </git>
     <git command="commit">
+      <env key="GIT_AUTHOR_EMAIL"    value="markwaite@yahoo.com" />
+      <env key="GIT_AUTHOR_NAME"     value="Mark Earl Yahoo Waite" />
+      <env key="GIT_COMMITTER_EMAIL" value="markwaite@yahoo.com" />
+      <env key="GIT_COMMITTER_NAME"  value="Mark Earl Yahoo Waite" />
       <args>
         <arg value="-m"/>
         <arg value="[${ant.project.name}] build++, was ${build.number}"/>
