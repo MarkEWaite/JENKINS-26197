@@ -1,4 +1,4 @@
-<project name="JENKINS-45447" default="increment" basedir=".">
+<project name="JENKINS-JENKINS-70158" default="increment" basedir=".">
 
   <property name="tags.arg" value="--tags"/>
   <property environment="env"/>
@@ -17,25 +17,9 @@
         <arg value="[${ant.project.name}] build++, was ${build.number}"/>
       </args>
     </git>
-    <!-- Tag predecessor commit with previous build number -->
-    <git command="tag">
-      <args>
-        <arg value="-a"/>
-        <arg value="-m"/>
-        <arg value="Annotated tag for ${ant.project.name} build 1.0.${build.number}"/>
-        <arg value="${ant.project.name}-1.0.${build.number}"/>
-        <arg value="HEAD^"/>
-      </args>
-    </git>
     <git command="push">
       <args>
         <arg value="origin"/>
-      </args>
-    </git>
-    <git command="push">
-      <args>
-        <arg value="origin"/>
-        <arg value="${tags.arg}"/>
       </args>
     </git>
   </target>
@@ -44,10 +28,8 @@
   <target name="info" description="Report info about this repo">
     <echo>java is ${java.version}</echo>
     <echo>user dir is ${user.dir}</echo>
-    <!-- JENKINS-45447 reports that rev-parse is called too often. -->
-    <!-- Check by reading console log interactively -->
-
-    <!-- JENKINS-64149 asked to clarify user name exclusion rules -->
+    <!-- JENKINS-70158 reports that ignore committer strategy is not honored in git plugin 4.14.0. -->
+    <!-- Check by reading multibranch Pipeline polling log interactively -->
     <!-- Check by reading git polling log, should contain string "Found excluded author:" -->
     <echo>curl --fail --silent ${env.JOB_URL}/scmPollLog/</echo>
     <exec executable="curl" failonerror="true">
