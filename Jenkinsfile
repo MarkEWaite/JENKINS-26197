@@ -1,7 +1,7 @@
 #!groovy
 
-/* Only keep the 10 most recent builds. */
-properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', numToKeepStr: '10']]])
+/* Only keep the 13 most recent builds. */
+properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', numToKeepStr: '13']]])
 
 def branch='JENKINS-70158'
 
