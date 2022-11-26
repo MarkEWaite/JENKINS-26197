@@ -5,7 +5,7 @@ properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', 
 
 def branch='JENKINS-70158'
 
-node('!windows && !cloud') {
+node('!cloud && !windows') {
   stage('Checkout') {
     checkout([$class: 'GitSCM',
         branches: [[name: branch]],
