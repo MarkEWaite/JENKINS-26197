@@ -29,6 +29,9 @@ node('!windows && !cloud') {
     }
     for (item in currentBuild.changeSets) {
       echo "Changeset item " + item.getItems()
+      for (file in item.getItems().getAffectedFiles()) {
+        echo "Affected file " + file
+      }
     }
   }
 }
