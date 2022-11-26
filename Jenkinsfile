@@ -19,7 +19,7 @@ node('!windows && !cloud') {
   }
   stage('Verify') {
     sh 'ant info'
-    if (manager.logContains('Scheduled build for branch: ' + branch)) {
+    if (manager.logContains('.*Scheduled build for branch:.*' + branch + '.*)) {
       unstable('Built branch ' + branch)
     } else {
       error('Oops')
