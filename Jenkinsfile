@@ -14,9 +14,9 @@ node('!windows && !cloud') {
             [$class: 'CloneOption', honorRefspec: true, noTags: true],
             [$class: 'LocalBranch', localBranch: branch]],
         gitTool: scm.gitTool,
-        userRemoteConfigs: [[refspec: "+refs/heads/${branch}:refs/remotes/origin/${branch}", url: 'https://github.com/MarkEWaite/JENKINS-26197']]]
+        userRemoteConfigs: [[refspec: "+refs/heads/${branch}:refs/remotes/origin/${branch}",
+                             url: 'https://github.com/MarkEWaite/JENKINS-26197']]]
     )
-    sh 'env | sort'
   }
   stage('Verify') {
     sh 'ant info'
