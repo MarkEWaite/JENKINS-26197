@@ -25,6 +25,7 @@ node('!windows && !cloud') {
         unstable('**** Build was triggered ****')
         currentBuild.description = "Triggered"
         print "User cause is ${currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')}"
+        print "SCM trigger cause is ${currentBuild.getBuildCauses('hudson.triggers.SCMTrigger$SCMTriggerCause')}"
     }
   }
 }
