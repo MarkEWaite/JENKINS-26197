@@ -1,4 +1,0 @@
-Sat Dec 26 15:07:49 MST 2015
-
-This file exists to show behavior of a symbolic link to a directory when
-the directory contains a file tracked by git.
