@@ -8,15 +8,16 @@ def branch='JENKINS-70158'
 
 node('!windows && !cloud') {
   stage('Checkout') {
-    checkout([$class: 'GitSCM',
-        branches: [[name: branch]],
-        extensions: [
-            [$class: 'CloneOption', honorRefspec: true, noTags: true],
-            [$class: 'LocalBranch', localBranch: branch]],
-        gitTool: scm.gitTool,
-        userRemoteConfigs: [[refspec: "+refs/heads/${branch}:refs/remotes/origin/${branch}",
-                             url: 'https://github.com/MarkEWaite/JENKINS-26197']]]
-    )
+    checkout scm
+    // checkout([$class: 'GitSCM',
+    //     branches: [[name: branch]],
+    //     extensions: [
+    //         [$class: 'CloneOption', honorRefspec: true, noTags: true],
+    //         [$class: 'LocalBranch', localBranch: branch]],
+    //     gitTool: scm.gitTool,
+    //     userRemoteConfigs: [[refspec: "+refs/heads/${branch}:refs/remotes/origin/${branch}",
+    //                          url: 'https://github.com/MarkEWaite/JENKINS-26197']]]
+    // )
   }
   // stage('Verify') {
   //   sh 'ant info'
